@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WanderWorld Travel Agency</title>
+
+  <!-- INTERNAL CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+    }
+
+    /* Header */
+    header {
+      background: #0d6efd;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 90vh;
+      background: url("https://images.unsplash.com/photo-1500534314209-a26db0f5f58a") center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      margin-top: 25px;
+      border: none;
+      background: orange;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    section h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Packages */
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      width: 280px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card span {
+      color: #0d6efd;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Travel Tips */
+    #tips ul {
+      list-style: none;
+      font-size: 18px;
+    }
+
+    #tips li {
+      margin: 10px 0;
+    }
+
+    /* Booking */
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+    }
+
+    form button {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0d6efd;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>WanderWorld</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#tips">Travel Tips</a>
+      <a href="#booking">Booking</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h2>Explore the World With Us</h2>
+    <p>Your journey begins here</p>
+    <button onclick="scrollToBooking()">Book Now</button>
+  </section>
+
+  <!-- Packages -->
+  <section id="packages">
+    <h2>Popular Tour Packages</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+        <h3>Maldives Getaway</h3>
+        <p>5 Days / 4 Nights</p>
+        <span>₹80,000</span>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <h3>Swiss Alps</h3>
+        <p>7 Days / 6 Nights</p>
+        <span>₹1,50,000</span>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada">
+        <h3>Paris Tour</h3>
+        <p>4 Days / 3 Nights</p>
+        <span>₹1,10,000</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Travel Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+      <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60b">
+      <img src="https://images.unsplash.com/photo-1500048993959-d6b1f5e71a9f">
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1">
+      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29">
+    </div>
+  </section>
+
+  <!-- Travel Tips -->
+  <section id="tips">
+    <h2>Travel Tips</h2>
+    <ul>
+      <li>✔ Keep copies of important documents</li>
+      <li>✔ Carry local currency</li>
+      <li>✔ Check weather before packing</li>
+      <li>✔ Buy travel insurance</li>
+      <li>✔ Respect local culture</li>
+    </ul>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking">
+    <h2>Book Your Trip</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <select required>
+        <option value="">Select Package</option>
+        <option>Maldives</option>
+        <option>Switzerland</option>
+        <option>Paris</option>
+      </select>
+      <input type="date" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 WanderWorld Travel Agency | PBL Web Designing Project</p>
+  </footer>
+
+  <!-- INTERNAL JS -->
+  <script>
+    function scrollToBooking() {
+      document.getElementById("booking")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
